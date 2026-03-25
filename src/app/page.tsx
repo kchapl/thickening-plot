@@ -1,66 +1,58 @@
-import Image from "next/image";
 import styles from "./page.module.css";
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+    <div className="animate-fade-in">
+      {/* Navigation Header */}
+      <header className={styles.header}>
+        <div className={styles.logoText}>Thickening Plot</div>
+        <nav className={styles.nav}>
+          <Link href="#features" className={styles.navLink}>Features</Link>
+          <Link href="#about" className={styles.navLink}>About</Link>
+          <Link href="#contact" className={styles.navLink}>Contact</Link>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <main className={styles.hero}>
+        <div className={styles.heroSub}>STORYTELLING REIMAGINED</div>
+        <h1 className={styles.heroTitle}>The mystery deepens...</h1>
+        <p className={styles.heroDesc}>
+          Step into a world of complex narratives, where every detail matters and the plot never stops thickening. A modern platform for stories that matter.
+        </p>
+        <div className={styles.actions}>
+          <button className={styles.btnPrimary}>Start Writing</button>
+          <button className={styles.btnSecondary}>Explore Stories</button>
         </div>
       </main>
+
+      {/* Features Grid */}
+      <section className={styles.grid} id="features">
+        <div className={`${styles.card} glass`}>
+          <h2 className={styles.cardTitle}>Recursive Narrative</h2>
+          <p className={styles.cardDesc}>
+            Our platform supports multi-layered stories with deep branching paths and context-aware elements.
+          </p>
+        </div>
+        <div className={`${styles.card} glass`}>
+          <h2 className={styles.cardTitle}>Collaborative Worldbuilding</h2>
+          <p className={styles.cardDesc}>
+            Write together in real-time with automatic versioning and conflict resolution for every story beat.
+          </p>
+        </div>
+        <div className={`${styles.card} glass`}>
+          <h2 className={styles.cardTitle}>Dynamic Characters</h2>
+          <p className={styles.cardDesc}>
+            AI-enhanced character tracking ensures consistency and depth as your cast grows.
+          </p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{ padding: '80px 24px', textAlign: 'center', opacity: 0.5 }}>
+        <p>© 2026 Thickening Plot. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
