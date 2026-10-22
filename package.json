@@ -20,5 +20,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
     "typescript": "^5"
+  },
+  "overrides": {
+    "braces": "^3.0.3"
   }
 }
